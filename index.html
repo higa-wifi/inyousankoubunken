@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>前後文追加</title>
+</head>
+<body>
+<h1>前後文追加</h1>
+<form>
+  入力欄1: <input type="text" id="input1"><br>
+  入力欄2: <input type="text" id="input2"><br>
+  入力欄3: <input type="text" id="input3"><br>
+  <input type="button" value="追加" onclick="addText()">
+</form>
+<br>
+出力欄: <textarea id="output" readonly></textarea>
+
+<script>
+function addText() {
+  var input1 = document.getElementById("input1").value;
+  var input2 = document.getElementById("input2").value;
+  var input3 = document.getElementById("input3").value;
+
+  var output = "";
+  if (input1 != "") {
+    output += "【図書】\n " + "1.『" + input1 + " 』\n";
+  }
+  if (input2 != "") {
+    output += "前の文字2: " + input2 + " 後の文字2\n";
+  }
+  if (input3 != "") {
+    output += "前の文字3: " + input3 + " 後の文字3\n";
+  }
+
+  document.getElementById("output").value = output;
+}
+</script>
+</body>
+</html>
